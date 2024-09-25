@@ -18,4 +18,14 @@ public ResponseEntity<Employee> updateOne(@RequestBody Employee employee) {
 Employee updatedEmployee = employeeRepository.save(employee);
 return new ResponseEntity<Employee>(updatedEmployee, HttpStatus.OK);
 }
+
+@PostMapping("/api/employees")
+public ResponseEntity<Employee> addOne(@RequestBody Employee employee) {
+Employee newEmployee = employeeRepository.save(employee);
+return new ResponseEntity<Employee>(newEmployee, HttpStatus.OK);
+}
+@DeleteMapping("/api/employees/{id}")
+public ResponseEntity<Integer> deleteOne(@PathVariable long id) {
+return new ResponseEntity<Integer>(employeeRepository.deleteOne(id), HttpStatus.OK);
+}
 }
