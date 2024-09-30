@@ -3,7 +3,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
+ 
 @Entity
 @Data
 @RequiredArgsConstructor
